@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Test task</title>
+  <style>
+    .text {
+	
+	display: block;
+    width: auto;
+    padding: 0;
+    font-size: 13px;
+    line-height: 24px;
+    color: #294661;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #d4dadf;
+	text-align: left;
+    
+   }
+    .btn {
+	
+	color: #fff;
+    background-color: #1188e6;
+    border-color: #1288e5;	
+    position: relative;
+    display: inline-block;
+    padding: 11px 30px;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    transition: color .3s,background-color .3s,border-color .3s;
+    user-select: none;
+}
+  </style>
+  
+   <script>
+    function checkCondition() {
+      var array = ["!", "@", "#", "$", "%", "^", "&", "*", "₴", "№", ";", ":", "?", "(", ")", "+", "_", "-", "'"];
+      let str = document.getElementById('text').value;
+      document.getElementById('text').value = '';
+      let result = document.getElementById('result');
+      result.style.color = 'black';
+      result.innerHTML = str;
+      if (str.length > 3) {
+        result.style.color = 'green';
+      }
+      if (str.length == 1 && array.includes(str)) {
+        result.style.color = 'red';
+      } 
+    }
+    function onClick() {
+      checkCondition();
+    }
+    function pressEnter(event) {
+      if (event.keyCode === 13) {
+        checkCondition();
+      }
+    }
+  </script>
+  
+ </head>
+ <body> 
+  <h4><input class="text" placeholder="Enter text" type="text" id="text" onkeyup="pressEnter(event)"></h4>
+  <p><input class="btn btn-primary" type="button" value="Отправить" onclick="onClick()"></p>
+  <p id="result"></p>
+ </body>
+</html>
