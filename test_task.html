@@ -5,40 +5,56 @@
   <title>Test task</title>
   <style>
     .text {
-	
-	display: block;
-    width: auto;
-    padding: 0;
-    font-size: 13px;
-    line-height: 24px;
-    color: #294661;
-    background-color: transparent;
-    border: 0;
-    border-bottom: 1px solid #d4dadf;
-	text-align: left;
-    
+      display: block;
+      width: auto;
+      padding: 0 5px;
+      font-size: 13px;
+      line-height: 24px;
+      color: #294661;
+      background-color: transparent;
+      border: 0;
+      border-bottom: 1px solid #d4dadf;
+      text-align: left;
    }
+
     .btn {
-	
-	color: #fff;
-    background-color: #1188e6;
-    border-color: #1288e5;	
-    position: relative;
-    display: inline-block;
-    padding: 11px 30px;
-    font-size: 13px;
-    line-height: 16px;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-    cursor: pointer;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 2px;
-    box-sizing: border-box;
-    transition: color .3s,background-color .3s,border-color .3s;
-    user-select: none;
-}
+      color: #fff;
+      background-color: #1188e6;
+      border: 1px solid #1288e5;
+      border-radius: 2px; 
+      position: relative;
+      display: inline-block;
+      padding: 11px 30px;
+      font-size: 13px;
+      line-height: 16px;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      cursor: pointer;
+      box-sizing: border-box;
+      user-select: none;
+      opacity: 1;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.7;
+    }
+
+    .wrapper {
+      width: 400px;
+      height: 300px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 3px solid #1188e6;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
   </style>
   
    <script>
@@ -68,8 +84,12 @@
   
  </head>
  <body> 
-  <h4><input class="text" placeholder="Enter text" type="text" id="text" onkeyup="pressEnter(event)"></h4>
-  <p><input class="btn btn-primary" type="button" value="Отправить" onclick="onClick()"></p>
-  <p id="result"></p>
+  <div class="wrapper">
+    <div>
+      <p><input class="text" placeholder="Enter text" type="text" id="text" onkeyup="pressEnter(event)"></p>
+      <p><input class="btn btn-primary" type="button" value="Отправить" onclick="onClick()"></p>
+      <p id="result"></p>
+    </div>
+</div>
  </body>
 </html>
